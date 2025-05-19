@@ -83,7 +83,6 @@ object MonCodeAlong extends App {
   def priceWithVAT(price: Double): Double = {
     price * vat
   }
-
   println(priceWithVAT(10.0))
 
   //CLASSES (think of this like a type)
@@ -100,6 +99,103 @@ object MonCodeAlong extends App {
   println(loki.speak)
   println(loki.name)
   println(loki.age)
+ //................................................................................
+//AFTERNOON TASK:  19 MAY 2025 STORING VALUES, TYPES AND OPERATORS
+  //--------------------------------------------------------------------------------
+//  MVP - Qn1 - Before coding, decide if the answer will be true or false. Then store the values in a function that can be printed
+  // and use operators evaluate the following:
+  // Three plus four, times fifty-seven is less than three-hundred
+  val resultA: Boolean = (3+4) *57 > 300
+ println(resultA)
+//One-hundred and forty four divided by 12 is greater than twelve or equal to twelve
+  val resultB: Boolean =(144/12)>=12
+  println(resultB)
+//cat is less than dog (strings)
+  val word1: String ="cat"
+  val word2: String = "dog"
+  val resultC: Boolean = word1<word2
+  println(resultC)
+//rabbit is less than hamster (strings)
+  val word3: String="rabbit"
+  val word4: String="Hamster"
+  val resultD: Boolean = word3<word4
+  println(resultD)
+// seventeen is odd (modulus)
+  val resultE: Boolean = 17 % 2 != 0
+  println(resultE)
+//seventy five divided by nine is less than thirty AND eighty-nine divided by siz is less than twenty
+  val resultF: Boolean = (75/9<30) && (89/6 <20)
+  println(resultF)
+
+ //Qn 2 - What is the difference between the 'String' "I love scala already" and print line ("I love scala already")?
+ // Ans - The String "I love scala already" is a string value and not displayed until it has been called/used and the
+  // println is printed to the terminal/console
+
+ //Qn 3- Write a method to calculate the square of an Int. It should have an 'Int' input parameter and 'Int' return type
+//NOTES - square of a number is number multiplied by itself.
+
+  def square(n: Int): Int = {n * n} //define a function that takes a number and returns the square
+  val n: Int = 4 //define a value n and set it to 4
+  println(square(n)) // this calls the square method (square(n) calls the function with number 4
+
+  println(square(9)) // methods can be called without creating new VAL replace n with Int in the println
+
+  //Qn 4 - write a method to check if a number is odd. it should have Int input parameter and Boolean return type
+  def isOdd(num: Int): Boolean ={
+    n % 2 !=0
+
+  }
+  val num=5
+  println(isOdd(n)) // False
+  println(isOdd(3)) // True - method is called isOdd(n)
+  println(isOdd(30)) // False
+  println(isOdd(49)) // True
+
+// Qn 5 - Consider a Library, there are many books. Write a Class called ‘Book’. What class parameters
+  //will your book need? Can you include any class methods in the body? Can you consider type
+  // Class parameters: title (String), author (String), yearPublished (Int), uniqueId (Int), isAvail (Boolean)
+
+  class Book( val title: String, val author: String, val yearPub: Int, val uniqueId: Int, val isAvail: Boolean)
+  val book1 = new Book("pride & prejudice", "jane austen", 1813, 8492891, true)
+
+  println(book1.title)
+  println(book1.author)
+  println(book1.yearPub)
+  println(book1.uniqueId)
+  println(book1.isAvail)
+
+  //Method to display book info
+  def displayInfo(): Unit ={
+    println(book1.title)
+    println(book1.author)
+    println(book1.isAvail)
+  }
+
+  //------------------------------------------------------------------------------
+  //EXTENSION
+  //Qn - Convert a lowercase 'String' to uppercase
+  //Use build method " .toUpperCase "
+
+  val lowerCase = "String"
+  val upperCase = lowerCase.toUpperCase()
+  println(upperCase) // Output: STRING
+
+  //Qn2 - Convert the first letter of a 'String' to uppercase
+
+  //Qn3 - "STRING" == "string" Is this true or false? Why?
+  val str1 ="STRING"
+  val str2="string"
+  println(str1 == str2) //Output: false
+  // String comparison with "==" in Scala is case-sensitive by dafault.
+  // The characters don't match therefore are NOT EQUAL (cases are different).
+  println(str1.equalsIgnoreCase(str2)) // using " .equalsIgnoreCase " will ignore the case and will OUTPUT True
+
+  //Qn4 - can you convert the 'String' "one" to the 'Int' 1? -CONVERT NUMERIC String into an Int????
+
+  //Qn5 - Can you convert the Int '1' to String "one'?
+
+  //Qn 6 - Convert 'Int' 1 to type 'String' is the results as expected?
+
 
 
 }
