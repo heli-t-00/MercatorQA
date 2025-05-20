@@ -105,38 +105,38 @@ object MonCodeAlong extends App {
 //  MVP - Qn1 - Before coding, decide if the answer will be true or false. Then store the values in a function that can be printed
   // and use operators evaluate the following:
   // Three plus four, times fifty-seven is less than three-hundred
-  val resultA: Boolean = (3+4) *57 > 300
- println(resultA)
+  val resultA: Boolean = (3+4) *57 < 300
+ println(resultA) // OUTPUT: False
 //One-hundred and forty four divided by 12 is greater than twelve or equal to twelve
   val resultB: Boolean =(144/12)>=12
-  println(resultB)
+  println(resultB) //OUTPUT: True
 //cat is less than dog (strings)
   val word1: String ="cat"
   val word2: String = "dog"
   val resultC: Boolean = word1<word2
-  println(resultC)
+  println(resultC) //OUTPUT: True
 //rabbit is less than hamster (strings)
   val word3: String="rabbit"
   val word4: String="Hamster"
-  val resultD: Boolean = word3<word4
+  val resultD: Boolean = word3<word4 // OUTPUT: False
   println(resultD)
 // seventeen is odd (modulus)
   val resultE: Boolean = 17 % 2 != 0
-  println(resultE)
+  println(resultE) // OUTPUT: True
 //seventy five divided by nine is less than thirty AND eighty-nine divided by siz is less than twenty
   val resultF: Boolean = (75/9<30) && (89/6 <20)
-  println(resultF)
+  println(resultF) // OUTPUT: True
 
  //Qn 2 - What is the difference between the 'String' "I love scala already" and print line ("I love scala already")?
  // Ans - The String "I love scala already" is a string value and not displayed until it has been called/used and the
-  // println is printed to the terminal/console
+  // println is printed to the terminal/console, but is not meaningful, the val is meaningful as it stores the data.
 
  //Qn 3- Write a method to calculate the square of an Int. It should have an 'Int' input parameter and 'Int' return type
 //NOTES - square of a number is number multiplied by itself.
 
   def square(n: Int): Int = {n * n} //define a function that takes a number and returns the square
   val n: Int = 4 //define a value n and set it to 4
-  println(square(n)) // this calls the square method (square(n) calls the function with number 4
+  println(square(n)) // this calls the square method (square(n) calls the function with number 4 OUTPUT
 
   println(square(9)) // methods can be called without creating new VAL replace n with Int in the println
 
@@ -181,6 +181,13 @@ object MonCodeAlong extends App {
   println(upperCase) // Output: STRING
 
   //Qn2 - Convert the first letter of a 'String' to uppercase
+val stringCap = "string"
+  val capitaliseString = stringCap.capitalize
+  println(capitaliseString) //Output: String
+
+  println(stringCap.toLowerCase()) // Output: string (first letter of word is Lower case
+
+
 
   //Qn3 - "STRING" == "string" Is this true or false? Why?
   val str1 ="STRING"
@@ -191,6 +198,8 @@ object MonCodeAlong extends App {
   println(str1.equalsIgnoreCase(str2)) // using " .equalsIgnoreCase " will ignore the case and will OUTPUT True
 
   //Qn4 - can you convert the 'String' "one" to the 'Int' 1? -CONVERT NUMERIC String into an Int????
+
+
 
   //Qn5 - Can you convert the Int '1' to String "one'?
 
