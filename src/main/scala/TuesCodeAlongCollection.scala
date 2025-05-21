@@ -198,7 +198,30 @@ object TuesCodeAlongCollection extends App {
  println("MVP3: "+ countSubmissionNames("Charlie")) //OUTPUT: 3 // this counts the submission for 'Charlie' only
 //Qn4. print a sentence that states how many times a specific person submitted their tax returns using the method for qn3.
 
+//Qn5. Using a built-in method (research will be required here), convert the `Seq` to a `Set` to
+  //remove duplicates.
 
+
+
+  //Qn6.Using string interpolation, print the list of unique taxpayers who submitted.
+
+
+
+  //Qn7. Refactor your method from question 3 to work for any inputted collection (HINT: look
+  //back at the collection family tree in the PowerPoint).
+
+  //Qn8. Using your method from question 7, print the count of the same taxpayer in both the
+  //`Seq` from question 1 and the `Set` from question 5.
+
+
+  //Qn9. Imagine that the user of this service needs to login however there are 6 users that have
+  //failed login attempts.
+  //a. Write a Map[String, Int] to represent the number of failed attempts for each
+  //user.
+  //b. Print the number of failed attempts for the user at index position 0.
+  //c. Add a new user to your Map who has 3 failed attempts.
+  //d. Update the user at index position 1 to have a further failed attempt.
+  //e. Remove the user at index position 5.
 
 
 
