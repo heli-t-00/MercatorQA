@@ -22,14 +22,14 @@ On GITHUB
   6. Delete branch
 -------------------------------------------------------------
 Steps to Clone GitHub Repo
-•	On the GitHub page of the Repository
-•	Click green button ‘<>Code’
-•	Copy the SSH URL
-
+  1. On the GitHub page of the Repository
+  2. Click green button ‘<>Code’
+  3. Copy the SSH URL
+ 
 Open IntelliJ 
-•	FILE > New > Project from Version Control
-•	Paste the github Repo URL
-•	Check the directory (which file you want to clone it to)
-•	Click Clone
+  1. FILE > New > Project from Version Control
+  2. Paste the github Repo URL
+  3. Check the directory (which file you want to clone it to)
+  4. Click Clone
 (This will download the repo, open the new project in either new window or current one( you will have option to select) and set it will set up .git tracking for the repo)
 
