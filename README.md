@@ -20,3 +20,16 @@ On GITHUB
   4. Click GREEN button - merge pull request
   5. Click GREEN button - confirm merge
   6. Delete branch
+-------------------------------------------------------------
+Steps to Clone GitHub Repo
+•	On the GitHub page of the Repository
+•	Click green button ‘<>Code’
+•	Copy the SSH URL
+
+Open IntelliJ 
+•	FILE > New > Project from Version Control
+•	Paste the github Repo URL
+•	Check the directory (which file you want to clone it to)
+•	Click Clone
+(This will download the repo, open the new project in either new window or current one( you will have option to select) and set it will set up .git tracking for the repo)
+
