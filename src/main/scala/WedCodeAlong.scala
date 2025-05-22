@@ -201,10 +201,10 @@ println(s"Does John have a bag with him $withBag")
   //`String` (e.g. “twenty”). Given the distance inputted, calculate the amount to be paid back being
   //sure to use try/catch to account for errors.
 
-  val distanceTravelled: Double = 15
+  val distanceTravelled = "10".toInt
 
   try {
-    val miles =distanceTravelled.toDouble
+    val miles =distanceTravelled
     val amountToPayBack: Double = distanceTravelled *0.45
     println(s"Amount to be paid back: £$amountToPayBack")
   } catch {
