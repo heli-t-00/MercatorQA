@@ -12,3 +12,11 @@ When starting a new branch
 2. git pull origin main
 3. git status (check this Before checking out a new branch)
 4. git checkout -b "NewBranchName" 
+
+On GITHUB
+  1. click on Pull requests
+  2. Open the Pull request
+  3. Check - no conflicts with base branch
+  4. Click GREEN button - merge pull request
+  5. Click GREEN button - confirm merge
+  6. Delete branch
