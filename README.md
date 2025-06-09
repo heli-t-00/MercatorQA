@@ -20,3 +20,6 @@ On GITHUB
   4. Click GREEN button - merge pull request
   5. Click GREEN button - confirm merge
   6. Delete branch
+
+When creating Object in Scala, Object defines a singleton object in Scala (like a class with only one instance)
+extend App: allows the object to run like a program without defining a main method. Everything in the body of the body of the obj is executed when the program runs.
