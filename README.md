@@ -21,5 +21,17 @@ On GITHUB
   5. Click GREEN button - confirm merge
   6. Delete branch
 
-When creating Object in Scala, Object defines a singleton object in Scala (like a class with only one instance)
-extend App: allows the object to run like a program without defining a main method. Everything in the body of the body of the obj is executed when the program runs.
+
+Steps to Clone GitHub Repo
+  1. On the GitHub page of the Repository
+  2. Click green button ‘<>Code’
+  3. Copy the SSH URL
+ 
+Open IntelliJ 
+  1. FILE > New > Project from Version Control
+  2. Paste the github Repo URL
+  3. Check the directory (which file you want to clone it to)
+  4. Click Clone
+(This will download the repo, open the new project in either new window or current one( you will have option to select) and set it will set up .git tracking for the repo)
+
+
