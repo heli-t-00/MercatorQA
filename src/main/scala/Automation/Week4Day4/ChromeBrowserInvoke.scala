@@ -1,0 +1,16 @@
+package Automation.Week4Day4
+
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.chrome.ChromeDriver
+
+object ChromeBrowserInvoke extends App {
+//define val, then calling webdriver api
+  val driver: WebDriver = new ChromeDriver()
+  println("Invoking Chrome Browser")
+  driver.get("https://www.google.com")
+  println("title of page: " +driver.getTitle)
+  driver.quit()
+
+// Locator Identification
+
+}
