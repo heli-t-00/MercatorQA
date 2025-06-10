@@ -11,10 +11,11 @@ object ByID extends App {
 //ACCESSING THE WEB URL FOR TESTING
   driver.get("https://proleed.academy/exercises/selenium/selenium-element-id-locators-practice-form.php")
 
-  val emailAddress: WebElement = driver.findElement(By.id ("email"))
+  // INSPECT ELEMENT IN WEBPAGE TO FIND THE NAMES YOU NEED TO SEARCH FOR
+  val emailAddress: WebElement = driver.findElement(By.id ("email")) //FIND ELEMENT THROUGH By.id (checked on inspect webpage)
 
 emailAddress.sendKeys("test@gmail.com")
-  // sendKeys is used for inputting text on any field
+  // sendKeys is used for inputting text on any field - example above 'test@gmail.com' is inputted
 println("email address entered: Passed")
   val password: WebElement = driver.findElement(By.id("password"))
   password.sendKeys("Password123")

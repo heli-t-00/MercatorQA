@@ -39,7 +39,19 @@ object Task2 extends App {
   // Used build in methods to minimise the browser window
   driver.manage().window().minimize()
   // Print part of the page source
-  driver.getPageSource.take(300)
+
+
+  // declared a val to .getPageSource FULL HTML page
+
+  val pageSource = driver.getPageSource
+  //  println("complete page source:" + pageSource)
+
+  // use .take() to only take part of the HTML page
+  val pageSourcePart = driver.getPageSource.take(30)
+
+
+  println("print 30 characters page source:" + pageSourcePart)
+
  // Close current window
   driver.close()
 //  driver.quit()

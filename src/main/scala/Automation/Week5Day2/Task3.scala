@@ -26,14 +26,22 @@ object Task3 extends App {
   //Navigate to test URL
   driver.get("https://demoqa.com/automation-practice-form")
   //Locate these elements: First Name Input Field, Submit Button and Hobbies Checkbox
-  driver.findElement(By.id  ("firstName"))
-  driver.findElement(By.id ("submit"))
-  driver.findElement(By.xpath ("//*[@id='hobbies-checkbox-1']"))
+  val firstname = driver.findElement(By.id  ("firstName"))
+  val submit = driver.findElement(By.id ("submit"))
+  val checkedBox = driver.findElement(By.xpath ("//*[@id='hobbies-checkbox-1']"))
   //  o Check if the Hobbies checkbox is selected; if not, select it.
-
-
+if(firstname.isDisplayed && firstname.isEnabled) {
+  firstname.sendKeys("Alpha")
+  println(" Firstname is displayed and enabled - type Alpha")
+}else {
+  println("Firstname is not displayed and enabled")
+}
   //  5. Print meaningful messages for each condition check and action taken.
-
+if(!checkedBox.isSelected) {
+  println("Check box not selected - check this now")
+} else {
+  println ("Check box already selected")
+}
 
   //  6. Close the browser at the end.
 driver.close()
