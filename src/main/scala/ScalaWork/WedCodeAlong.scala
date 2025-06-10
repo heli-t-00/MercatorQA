@@ -1,3 +1,5 @@
+package ScalaWork
+
 object WedCodeAlong extends App { //add 'extends App' to get it runnable
 
   //CONDITIONAL if/else

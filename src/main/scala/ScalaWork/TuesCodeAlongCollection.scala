@@ -1,3 +1,5 @@
+package ScalaWork
+
 object TuesCodeAlongCollection extends App {
   //SET - Collections
   val firstSet: Set[Int] = Set(1, 2, 3, 4, 5, 5)

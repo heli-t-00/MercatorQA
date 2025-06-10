@@ -1,3 +1,5 @@
+package ScalaWork
+
 object MonCodeAlong extends App {
   //  VAL = BEST PRACTISE!!!
   val melons = 5 * 50
