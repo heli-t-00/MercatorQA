@@ -20,9 +20,9 @@ println("email address entered: Passed")
   password.sendKeys("Password123")
 println("password entered: Passed")
 
-//  val login: WebElement = driver.findElement(By.id("login"))
-//  login.click()
-//  println("login entered: successful")
+  val login: WebElement = driver.findElement(By.id("login"))
+  login.click()
+  println("login entered: successful")
 
   driver.quit()
 
