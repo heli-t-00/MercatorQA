@@ -26,12 +26,12 @@ object Task1 extends App {
 
   // Fetch and Print: Title Page & Current URL
   driver.getTitle()
-  println("Title Page: ")
+  println("Title Page: " + driver.getTitle)
   driver.getCurrentUrl()
-  println("Current URL")
+  println("Current URL" + driver.getCurrentUrl)
 
 //  // Close current window
-//  driver.close()
+  driver.close()
 
 //End the session
   driver.quit()
