@@ -1,7 +1,8 @@
 package Automation.Week5Day3
 
-import org.openqa.selenium.{By, WebDriver}
+import org.openqa.selenium.{By, WebDriver, WebElement}
 import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.support.ui.Select
 
 //MVP:
 //Automate a basic form interaction and navigation:
@@ -91,8 +92,15 @@ if(checkBox.isSelected) {
   //5. Handle Dropdown/Select:
     //• Choose an option from the dropdown.
 
+val dropDown: WebElement = driver.findElement(By.name("dropdown"))
+val selectDropdown = new Select(dropDown)
 
-
+  selectDropdown.selectByVisibleText("Drop Down Item 1") // Visible by Text
+  println("Select by visible text - " + selectDropdown.getFirstSelectedOption.getText)
+  selectDropdown.selectByIndex(2) // Select based on index
+println("Select by index - " + selectDropdown)
+  selectDropdown.selectByValue("dd6")
+  println("Select by value - " +selectDropdown)
     //6. Handle Buttons:
     //• Click the "Submit" button.
 
