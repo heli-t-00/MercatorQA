@@ -1,8 +1,9 @@
 package Automation.Week5Day4
 
+//Import the neccesary Selenium classes
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.{By, WebDriver}
-//
+//define Object with main method
 object HandlingStaticTables extends App {
 //INITIATING THE CHROMEDRIVER FOR INTERACTING WITH THE CHROME BROWSER
 val driver: WebDriver = new ChromeDriver

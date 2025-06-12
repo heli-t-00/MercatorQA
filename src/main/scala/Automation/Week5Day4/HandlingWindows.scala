@@ -25,23 +25,27 @@ driver.findElement(By.linkText("Click Here")).click()
 
 
   val allWindows: List[String] = driver.getWindowHandles.asScala.toList
-  val it =allWindows.iterator // iterate through each window handles
+  //.getWindowHandles gets a list of all open windows (their unique ID) It runs a Set, so we convert .asScala.toList so we can work with it easily
 
-  while(it.hasNext) {
-    val handle = it.next()
+  val it =allWindows.iterator // iterate through each window one by one
 
-    if (handle != parentWindow) { // if window is not the parent handle - switch to the window to current window
-      driver.switchTo().window(handle)
-      println("The current window" + handle)
 
-      println("Page title is - " + driver.getTitle())
+  // LOOP to Switch Windows
 
+  while(it.hasNext) { // loops through each open window
+    val handle = it.next() // handle will hold the ID of the current window we're checking
+
+    if (handle != parentWindow) { // this checks if this is NOT the parent/original window, we only want to switch to the new window that just opened.
+
+      driver.switchTo().window(handle) // switch control to new window.
+      println("The current window" + handle) // print the ID of new window
+
+      println("Page title is - " + driver.getTitle()) // prints the title of the web page in the new window
     }
-
 
   }
 
-
   driver.quit()
+// this script, open a website with a link that opens a new window. click the link to open the new window. get the list of all windows open. Loop through them. If it is not the original window, switch to it. Print that window Id and Title.
 
 }
