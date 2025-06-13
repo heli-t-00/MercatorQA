@@ -73,7 +73,7 @@ object LoopPractise extends App {
   // recursion calls a method again in Scala code
 
   //TABLES
-  <table>
+ /* <table>
     <tr>
      <td>Apple</td><td>Red</td>
     </tr>
@@ -81,6 +81,8 @@ object LoopPractise extends App {
   <td>Banana</td><td>Yellow</td>
     </tr>
     </table>
+
+  */
 // loop through table rows
   val rows = driver.findElements(By.tagName("tr")) // find all elements contained with 'tr' tags (rows)
   // find row and index position
