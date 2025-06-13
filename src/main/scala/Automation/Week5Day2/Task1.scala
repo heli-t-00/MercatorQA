@@ -29,6 +29,8 @@ object Task1 extends App {
   println("Title Page: " + driver.getTitle)
   driver.getCurrentUrl()
   println("Current URL" + driver.getCurrentUrl)
+  driver.getWindowHandle()
+  println("Window Handle: " + driver.getWindowHandle)
 
 //  // Close current window
   driver.close()
