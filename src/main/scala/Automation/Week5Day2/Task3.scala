@@ -49,7 +49,9 @@ object Task3 extends App {
   //SECOND example - Check Hobbies Checkbox
   if (!checkedBox.isSelected) {
     println("Hobbies checkbox is not selected. Selecting it now.")
-    // Scroll into view first
+
+    // Scroll into view first ==== USE JavaScriptExecutor =======
+
     val js = driver.asInstanceOf[JavascriptExecutor]
     js.executeScript("arguments[0].scrollIntoView(true);", checkedBox)
     Thread.sleep(500)
