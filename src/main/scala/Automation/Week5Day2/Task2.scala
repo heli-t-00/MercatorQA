@@ -26,31 +26,41 @@ object Task2 extends App {
   //Launch the browser using WebDriver
   //Navigate to test URL
   driver.get("https://demoqa.com/automation-practice-form")
+
+  //USE Navigate methods
   // Navigate to new window used navigate().to()
   driver.navigate().to("https://example.com")
+
   // Navigates back to previous window in back history
   driver.navigate().back()
+
   // Navigates forward to window in history
   driver.navigate().forward()
+
   // refreshes the window
   driver.navigate().refresh()
+
   // Used built in methods to maximise the browser window
   driver.manage().window().maximize()
+
   // Used build in methods to minimise the browser window
   driver.manage().window().minimize()
-  // Print part of the page source
 
+  // Print part of the page source for inspection
 
-  // declared a val to .getPageSource FULL HTML page
-
+  // Get the full HTML source of the current web page
   val pageSource = driver.getPageSource
-  //  println("complete page source:" + pageSource)
 
-  // use .take() to only take part of the HTML page
-  val pageSourcePart = driver.getPageSource.take(30)
+  // Optionally print the entire page source (commented out to avoid clutter)
+  // println("Complete page source:\n" + pageSource)
 
+  // Use Scala's .take() method to get the first 30 characters of the HTML
+  val pageSourcePart = pageSource.take(30)
+  Thread.sleep(3000) // Pause for 3 seconds to view output
+  // Print the snippet
+  println("First 30 characters of page source:\n" + pageSourcePart)
+//NB: \n newline - tells the program to start a new line when printing to console
 
-  println("print 30 characters page source:" + pageSourcePart)
 
  // Close current window
   driver.close()

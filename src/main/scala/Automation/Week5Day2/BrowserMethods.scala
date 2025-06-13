@@ -8,17 +8,33 @@ object BrowserMethods extends App {
   val driver: WebDriver = new ChromeDriver()
 //ACCESSING THE WEB URL FOR TESTING
   driver.get("https://www.selenium.dev/selenium/web/web-form.html") // .get() navigates to URL
-driver.manage().window().maximize() // maximises windows
-  driver.navigate().to("https://the-internet.herokuapp.com") // same as .get()
 
-  driver.navigate().back() // navigate BACK to browser history
- driver.navigate().forward() // navigate FORWARD to browser history
 
-  driver.navigate().refresh() // refresh current page
+  // ======== Commonly Used WebDriver 'browser control' Methods ========
 
-  driver.close() // close current window NB can't be used at same time as driver.quit() will throw up error as there's nothing to close if already used driver.quit()
+  // Maximize the browser window
+  driver.manage().window().maximize()
 
-//  driver.quit() // close ALL window
+  // Navigate to the first URL using .navigate().to()
+  driver.navigate().to("https://example.com")
+
+  // Navigate to a second URL
+  driver.navigate().to("https://the-internet.herokuapp.com")
+
+  // Go back in browser history
+  driver.navigate().back()
+
+  // Move forward in browser history
+  driver.navigate().forward()
+
+  // Refresh the current page
+  driver.navigate().refresh()
+
+  // Close the current browser window
+  driver.close()
+
+  // Optionally quit the WebDriver session completely if multiple windows were opened
+  // driver.quit()
 
 
 
