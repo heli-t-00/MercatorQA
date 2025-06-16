@@ -26,9 +26,9 @@ object ExceptionHandling extends App {
 //    e.printStackTrace()
 
 //
-//    case e: Exception => // USE THIS WHEN YOU DON"T KNOW WHAT TYPE OF EXCEPTION IS EXPECTED
-//      println("Print any exception: " +e.getMessage )
-//    e.printStackTrace() // get log for debugging
+    case e: Exception => // USE THIS WHEN YOU DON"T KNOW WHAT TYPE OF EXCEPTION IS EXPECTED
+      println("Print any exception: " +e.getMessage )
+    e.printStackTrace() // get log for debugging
 
   } finally {
     if(driver !=null) {
