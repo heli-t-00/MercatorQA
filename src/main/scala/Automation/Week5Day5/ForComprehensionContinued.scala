@@ -76,8 +76,8 @@ object ForComprehensionContinued extends App {
 //COMBINE .map and .mkString EXAMPLE
   val names = List ("alpha", "betty", "charlee", "dandan")
   val namesResult = names
-    .map(name=> name.capitalize) // Capitalise each name
-    .mkString((" & ")) // Join with " & "
+    .map(name=> name) // Capitalise each name
+    .mkString(("    ")) // Join with " & "
 
   println("Combined .map and .mkString " + namesResult) //OUTPUT: Alpha & Betty & Charlee & Dandan
 

@@ -85,8 +85,8 @@ object LoopPractise extends App {
   */
 // loop through table rows
   val rows = driver.findElements(By.tagName("tr")) // find all elements contained with 'tr' tags (rows)
-  // find row and index position
 
+  // find row and index position
   for ((row, index) <- rows.asScala.zipWithIndex){
     val cells = row.findElements(By.tagName("td")) // this is taking all of the rows that has been found and going INSIDE the rows and Pull out every "td" tag ie. Apple, Red, Banana, Yellow
     // cell = List("Apple", "Red", "0", "Banana", "Yellow", "1")
