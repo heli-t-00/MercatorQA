@@ -46,21 +46,24 @@ object pmTaskWk6day1 extends App {
     val userName: WebElement = driver.findElement(By.id("username"))
     val passWord: WebElement = driver.findElement(By.id("password"))
     userName.sendKeys("tomsmith")
-    passWord.sendKeys("SuperSecretPassword")
+    passWord.sendKeys("SuperSecretPassword!")
     println("MVP2 Username: " + userName)
     println("MVP Password: " + passWord)
 
 
-    //explicit wait
+    //Explicit wait
     val explicitWait = new WebDriverWait(driver, Duration.ofSeconds(10))
 
     //3. Submit the login form.
-//    val login: WebElement = driver.findElement(By.xpath("//*[@id=\"login\"]/button/i"))
-//   explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"login\"]/button/i"))).click()
-   explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#loginbutton"))).click()
+    val login: WebElement = driver.findElement(By.xpath("//*[@id=\"login\"]/button/i"))
+   explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"login\"]/button/i"))).click()
+    // EXPLICIT WAIT - waits until icon <i> element inside the button is clickable, then click on it
 
+    //===EXAMPLE TO GIVE Timeout Exception ERROR -this selector is incorrect there is no #loginbuttonncomment, therefore will throw an exception (uncomment /comment ) to check======
 
-    //    login.click()
+//   explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#loginbutton"))).click()
+
+        login.click()
     println("login entered: successful")
 
 
@@ -77,23 +80,29 @@ object pmTaskWk6day1 extends App {
     FileHandler.copy(srcTimestamp, new File(s"/Users/helen.to/Documents/screenshotAutomation/Wk6D1pmtask_$timeStamp.png")) // TIMESTAMP so that a new file is created
     println("Screenshot TimeStamp: " + timeStamp)
 
+
+
     //7. Use try / catch / finally:
     // a. catch Selenium exceptions (e.g., NoSuchElementException, TimeoutException)
 
 
   }
   catch {
-//    case e: NoSuchElementException =>
-//      println("element not found" + e.getMessage)
-    //    e.printStackTrace()
+    case e: NoSuchElementException =>
+      println("element not found" + e.getMessage)
+        e.printStackTrace()
 
     case e: TimeoutException =>
-      println("Timeout Exception")
+      println("Timeout Exception====")
 
     //
     case e: Exception => // USE THIS WHEN YOU DON"T KNOW WHAT TYPE OF EXCEPTION IS EXPECTED
-      println("Print any exception: " + e.getMessage)
-      e.printStackTrace() // get log for debugging
+      val timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date())
+      val screenshot = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
+      FileHandler.copy(screenshot, new File(s"/Users/helen.to/Documents/screenshotAutomation/error-$timeStamp.png"))
+      println("Error occurred: " + e.getMessage)
+      e.printStackTrace()
+
 
 
     // 8. Finally, call driver.quit().
@@ -105,4 +114,7 @@ object pmTaskWk6day1 extends App {
 
 
   }
+
+  /*NB: FOR THIS TASK, the try catch was wrapped around the whole script*/
+
 }
