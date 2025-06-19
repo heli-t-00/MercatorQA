@@ -104,11 +104,16 @@ println("Select by index - " + selectDropdown)
     //6. Handle Buttons:
     //• Click the "Submit" button.
 
-
+  val submit = driver.findElement(By.cssSelector("input[type='submit']"))
+  submit.click()
+  println("6.\nClicked submit button")
 
     //7. Handle Links:
     //• Click a link to return to the homepage.
 
+  val homeLink = driver.findElement(By.xpath("//*[@id='back_to_form']"))
+  homeLink.click()
+  println("7.\nClicked 'Index' link to return to homepage")
 
   driver.quit()
 
