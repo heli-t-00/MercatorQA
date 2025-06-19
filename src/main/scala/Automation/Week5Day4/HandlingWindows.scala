@@ -32,7 +32,7 @@ driver.findElement(By.linkText("Click Here")).click()
 
   // LOOP to Switch Windows
 
-  while(it.hasNext) { // loops through each open window
+  while(it.hasNext) { // loops/iterate through each open window
     val handle = it.next() // handle will hold the ID of the current window we're checking
 
     if (handle != parentWindow) { // this checks if this is NOT the parent/original window, we only want to switch to the new window that just opened.
