@@ -23,18 +23,18 @@ object ScreenCapture extends App {
 
   val srcFull: File = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
   FileHandler.copy(srcFull, new File("/Users/helen.to/Documents/screenshotAutomation/TestResult.png")) // CREATE FILE MANUALLY screenshotAutomation
-
+println("Screenshot")
 //--------- CAPTURE SCREENSHOT with timestamp
 
   val timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date())
   val srcTimestamp: File = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.FILE)
   FileHandler.copy(srcTimestamp, new File(s"/Users/helen.to/Documents/screenshotAutomation/TestResult_$timeStamp.png")) // TIMESTAMP so that a new file is created
-
+println("screenshot with timestamp")
   //---- CAPTURE A SPECIFIC ELEMENT
   val element = driver.findElement(By.name("my-disabled")) // Locate the element by its name (update if needed)
   val srcElement: File = element.getScreenshotAs(OutputType.FILE) // Capture only that element// Save the screenshot of the element
   FileHandler.copy(srcElement, new File("/Users/helen.to/Documents/screenshotAutomation/TestResult_Specific.png"))
-
+println("screenshot specific element")
 //RE-USE THIS code time and time again!
 
 // BEST PRACTISE -- any file extensions .png, .jpeg, .txt, .pdf, csv, .json
