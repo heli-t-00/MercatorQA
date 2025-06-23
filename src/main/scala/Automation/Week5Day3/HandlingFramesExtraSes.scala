@@ -4,47 +4,31 @@ import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.{By, WebDriver}
 
 /* This code opens Chrome, goes to website with nested Frames (tiny pages inside pages) switches into different frames (middle, bottom, left, Extracts and prints text inside*/
+
 object HandlingFramesExtraSes extends App {
-//INITIATING THE CHROMEDRIVER FOR INTERACTING WITH THE CHROME BROWSER
+  //INITIATING THE CHROMEDRIVER FOR INTERACTING WITH THE CHROME BROWSER
   val driver: WebDriver = new ChromeDriver()
-//ACCESSING THE WEB URL FOR TESTING
+  //ACCESSING THE WEB URL FOR TESTING
   driver.get("https://the-internet.herokuapp.com/nested_frames")
-//  check the locator of Webpage - INSPECT page
+  //  check the locator of Webpage - INSPECT page
 
-  //Switch from frame-top first BEFORE accessing frame-middle
-driver.switchTo().frame("frame-top") // Move to top container
 
-driver.switchTo().frame("frame-middle") // Move to middle frame
+  // ========STEPS to MOVE between frames ====== TODO write notes
+  driver.switchTo().frame("frame-top") // used name to find the frame
+  println("you are on top frame")
+  driver.switchTo().frame(1) // use index to find the frame
+  println("you are on middle frame of the top frame")
 
-  val middleText = driver.findElement((By.id("content"))).getText
-  println("Middle Text = " + middleText) //OUTPUT Middle Text MIDDLE
+  driver.switchTo().defaultContent() // go back to the initial frame
 
-// Go back to Main Page (Default Frame)
-driver.switchTo().defaultContent() // brings you back to the default frame, exits all frames.
+  // driver.switchTo().frame("frame-bottom") // take name or use webElement
 
-// Switch to Bottom Frame (by Index)
-  driver.switchTo().frame(1) // SWITCHING FRAME USING INDEX
+  // when you want to validate what's the name of frame or retrieve data is use .getText method
 
-  val bottomText = driver.findElement(By.tagName("body")).getText
+  // Create a val called frameBottom and this can be called - example of using Web Element
+  val frameBottom = driver.findElement(By.name("frame-bottom"))
+  driver.switchTo().frame(frameBottom)
 
-  println("Bottom text = " +bottomText)
-
-// Go back to Main Frame Again
-driver.switchTo().defaultContent() // takes you back to the MAIN frame
-
-  // use web element to do the switching
-  // go to top frame from main page
-
-  // Switch to Left Frame using WebElement - using frame element
-
-  val frameTop = driver.findElement((By.name("frame-top")))
-  driver.switchTo().frame(frameTop)
-
-  // Go to Left frame
-  driver.switchTo().frame("frame-left")
-
-  val leftText = driver.findElement((By.tagName("body"))).getText
-  println("Left text =  "+ leftText) // OUTPUT: Left text = LEFT
 
   driver.quit()
 
