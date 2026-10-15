@@ -89,4 +89,5 @@ target
 .target
 test-result
 tmp
-.vscode/
+*.docx
+~$*
